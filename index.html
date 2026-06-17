@@ -153,22 +153,19 @@
   .log{display:grid;grid-template-columns:1.3fr 1fr;gap:26px}
   @media(max-width:880px){.log{grid-template-columns:1fr}}
   .log-feature{position:relative;overflow:hidden;border-radius:14px;padding:clamp(28px,3vw,42px);
-    color:#f0f3ff;border:1px solid rgba(255,255,255,.08);
-    background:radial-gradient(95% 100% at 12% -8%,rgba(230,160,40,.32),transparent 55%),
-      linear-gradient(160deg,#161a2e,#0a0d18);
-    box-shadow:0 26px 52px -28px rgba(10,13,24,.55);
+    color:var(--text);border:1px solid var(--line);box-shadow:0 1px 3px rgba(20,20,30,.06);
+    background:radial-gradient(90% 90% at 92% -10%,rgba(224,144,28,.12),transparent 55%),#fff;
     display:flex;flex-direction:column;justify-content:space-between;min-height:340px}
-  .log-feature::before{content:"01";position:absolute;right:14px;bottom:-32px;
-    font-family:var(--font-display);font-size:176px;color:rgba(230,160,40,.13);line-height:1}
+  .log-feature::before{content:"01";position:absolute;right:14px;bottom:-30px;
+    font-family:var(--font-display);font-size:176px;color:rgba(20,20,30,.07);line-height:1}
   .log-feature>*{position:relative}
-  .log-feature .tag{color:var(--cyan-bright)}
   .log-feature h3{font-family:"Sora",var(--font-ui);font-size:clamp(26px,2.6vw,34px);font-weight:800;
-    margin:14px 0 0;line-height:1.06;max-width:16ch;letter-spacing:-.02em;color:#fff}
-  .log-feature .log-ex{color:#b9c2dd;font-size:14.5px;line-height:1.55;margin:12px 0 0;max-width:34ch}
+    margin:0;line-height:1.06;max-width:16ch;letter-spacing:-.02em;color:var(--text)}
+  .log-feature .log-ex{color:var(--text-dim);font-size:14.5px;line-height:1.55;margin:14px 0 0;max-width:34ch}
   .log-feature .more{display:inline-flex;align-self:flex-start;align-items:center;gap:8px;
     font-family:var(--font-mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;
-    color:#fff;border:1.5px solid rgba(255,255,255,.3);border-radius:999px;padding:10px 18px;transition:.16s}
-  .log-feature .more:hover{background:#fff;color:#0a0d18;border-color:#fff}
+    color:#fff;background:var(--ink);border:1.5px solid var(--ink);border-radius:999px;padding:11px 20px;transition:.16s}
+  .log-feature .more:hover{background:var(--red);border-color:var(--red)}
 
   .log-list{display:flex;flex-direction:column}
   .log-item{position:relative;display:grid;grid-template-columns:auto 1fr auto;gap:16px;align-items:center;
@@ -325,7 +322,6 @@
   <div class="log">
     <article class="log-feature reveal">
       <div>
-        <div class="tag">Latest issue · Deep dive</div>
         <h3>The Space Race — Weekly Roundup</h3>
         <p class="log-ex">Starship's next flight, the SPCX IPO fallout, and the quiet Moon-base race nobody else is covering.</p>
       </div>
