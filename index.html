@@ -98,6 +98,11 @@
     pointer-events:none;filter:drop-shadow(0 14px 44px rgba(20,20,30,.28));will-change:transform}
   .hero-moon img{width:100%;display:block;animation:moonIn 1.5s cubic-bezier(.2,.8,.2,1) both}
   #log{padding-top:clamp(100px,13vw,170px)}
+  /* keep the moon inside the hero on mobile so it can't crash into the next section */
+  @media(max-width:760px){
+    .hero-moon{right:-22%;bottom:1%;width:64vw}
+    #log{padding-top:clamp(48px,9vw,80px)}
+  }
   /* mars overlay (behind the moon) */
   .hero-mars{position:absolute;left:66%;top:5%;width:clamp(140px,19vw,280px);z-index:1;
     pointer-events:none;animation:marsIn 1.5s ease-out both}
@@ -444,7 +449,7 @@
       const h=heroSec.offsetHeight;
       const y=Math.min(Math.max(window.scrollY,0),h);
       if(heroBg) heroBg.style.transform='translate3d(0,'+((y-h/2)*0.2)+'px,0)';
-      if(heroMoon) heroMoon.style.transform='translate3d(0,'+(-window.scrollY*0.45)+'px,0)';
+      if(heroMoon) heroMoon.style.transform = innerWidth>760 ? 'translate3d(0,'+(-window.scrollY*0.45)+'px,0)' : 'none';
       ticking=false;
     };
     addEventListener('scroll',()=>{if(!ticking){requestAnimationFrame(update);ticking=true;}},{passive:true});
