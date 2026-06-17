@@ -1,0 +1,11 @@
+# OS
+.DS_Store
+
+# Vercel
+.vercel
+
+# Dependencies
+node_modules/
+
+# Scratch / work-in-progress assets (not deployed)
+junk/
